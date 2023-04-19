@@ -1,0 +1,43 @@
+.form {
+    background-color: #424242;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #000;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7);
+    min-width: 660px;
+}
+
+label {
+    margin-bottom: 10px;
+    color: #8d8d8d;
+}
+
+label:last-child {
+    margin-bottom: 0px;
+}
+
+.inputName {
+    margin-left: 28px;
+    background-color: #000;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+.inputNumber {
+    margin-left: 10px;
+    background-color: #000;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+.buttonEditor {
+    min-width: 80px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #8d8d8d;
+    color: #000;
+}
