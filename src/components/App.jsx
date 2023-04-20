@@ -17,27 +17,16 @@ class App extends Component {
   };
 
   addContact = ({ name, number }) => {
-    const normalizedName = name.toLowerCase();
-
-    let isAdded = false;
-    this.state.contacts.forEach(el => {
-      if (el.name.toLowerCase() === normalizedName) {
-        alert(`${name} is already in contacts`);
-        isAdded = true;
-      }
-    });
-
-    if (isAdded) {
-      return;
-    }
     const contact = {
       id: shortid.generate(),
-      name: name,
-      number: number,
+      name,
+      number,
     };
-    this.setState(prevState => ({
-      contacts: [...prevState.contacts, contact],
-    }));
+    this.state.contacts.some(el => el.name === contact.name)
+      ? alert(`${name} is already in contacts`)
+      : this.setState(({ contacts }) => ({
+          contacts: [contact, ...contacts],
+        }));
   };
 
   changeFilter = e => {
@@ -66,13 +55,13 @@ class App extends Component {
     return (
       <div
         style={{
-          // height: '100vh',
+          
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           flexDirection: 'column',
           fontSize: 18,
-          // textTransform: 'uppercase',
+          
           color: '#010101',
         }}
       >
