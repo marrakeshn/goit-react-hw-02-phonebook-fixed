@@ -29,6 +29,8 @@ class ContactForm extends Component {
     }));
   };
 
+
+
   render() {
     return (
       <form className={styles.form} onSubmit={this.handleSubmit}>
@@ -68,8 +70,8 @@ class ContactForm extends Component {
 }
 
 ContactForm.propTypes = {
-  name: PropTypes.string.isRequired,
-  number: PropTypes.number.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 };
+
 
 export default ContactForm;
